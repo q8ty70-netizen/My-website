@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حلول تقنية | خدمات تصميم وبرمجة</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Tahoma,Arial,sans-serif;background:#f8fafc;color:#0f172a;line-height:1.8}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+header{background:#fff;border-bottom:1px solid #e2e8f0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px;flex-wrap:wrap}
+.logo{font-weight:bold;font-size:1.25rem;color:#0f766e}
+.nav-links{display:flex;gap:18px;flex-wrap:wrap;font-size:.95rem}
+.btn{display:inline-block;padding:12px 22px;border-radius:12px;background:#0f766e;color:#fff;font-weight:bold;border:0;cursor:pointer;font-size:1rem}
+.btn-outline{background:transparent;color:#0f766e;border:2px solid #0f766e}
+.btn-wa{background:#25D366}
+.hero{padding:64px 0 48px;background:linear-gradient(135deg,#ecfdf5,#f0fdfa 60%,#fff)}
+.hero h1{font-size:clamp(1.8rem,4vw,3rem);margin-bottom:16px}
+.hero p{font-size:1.1rem;color:#64748b;max-width:720px;margin-bottom:26px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+section{padding:56px 0}
+.section-title{font-size:clamp(1.4rem,3vw,2rem);margin-bottom:8px}
+.section-sub{color:#64748b;margin-bottom:28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:22px;box-shadow:0 6px 20px rgba(15,23,42,.04)}
+.card h3{margin-bottom:8px;color:#115e59}
+.card p{color:#64748b;margin-bottom:14px;font-size:.96rem}
+.card ul{list-style:none;margin-bottom:16px;font-size:.92rem}
+.card li{margin-bottom:6px;padding-right:20px;position:relative}
+.card li::before{content:"✓";position:absolute;right:0;color:#0f766e;font-weight:bold}
+.badge{display:inline-block;background:#ccfbf1;color:#115e59;padding:4px 10px;border-radius:999px;font-size:.78rem;margin-bottom:10px}
+.selector{background:#fff;border:1px solid #e2e8f0;border-radius:22px;padding:26px}
+.form-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:18px}
+label{display:block;font-weight:bold;margin-bottom:6px;font-size:.95rem}
+select{width:100%;padding:12px;border-radius:12px;border:1px solid #e2e8f0;font-size:1rem}
+.result{margin-top:20px;padding:20px;border-radius:16px;background:#f0fdfa;border:1px solid #99f6e4;display:none}
+.result.show{display:block}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.step{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:20px}
+.step-num{width:34px;height:34px;border-radius:50%;background:#0f766e;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:bold;margin-bottom:10px}
+footer{background:#0f172a;color:#e2e8f0;padding:32px 0}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="logo">حلول تقنية</div>
+    <nav class="nav-links">
+      <a href="#services">الخدمات</a>
+      <a href="#selector">اختر المناسب</a>
+      <a href="#contact">تواصل</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>خدمات تقنية متكاملة من مكان واحد</h1>
+    <p>تصميم مواقع، برمجة برمجيات خاصة، صيانة ودعم، إدارة مرافق حاسوبية، دراسات تقنية، وبطاقات تهنئة. اختر احتياجك وسنقترح عليك الخدمة المناسبة.</p>
+    <div class="hero-actions">
+      <a href="#selector" class="btn">اختر خدمتك المناسبة</a>
+      <a href="#services" class="btn btn-outline">تصفح الخدمات</a>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <h2 class="section-title">الخدمات</h2>
+    <p class="section-sub">اضغط على الخدمة أو استخدم المستشار بالأسفل.</p>
+    <div class="grid" id="servicesGrid"></div>
+  </div>
+</section>
+
+<section id="selector">
+  <div class="container">
+    <h2 class="section-title">اختر الخدمة المناسبة لك</h2>
+    <p class="section-sub">أجب على 3 أسئلة وسنقترح لك الخدمة المناسبة.</p>
+    <div class="selector">
+      <div class="form-row">
+        <div><label>أنت؟</label>
+          <select id="clientType">
+            <option value="individual">فرد</option>
+            <option value="small">شركة صغيرة</option>
+            <option value="org">مؤسسة</option>
+          </select>
+        </div>
+        <div><label>احتياجك؟</label>
+          <select id="need">
+            <option value="website">موقع إلكتروني</option>
+            <option value="software">برمجة نظام خاص</option>
+            <option value="maintenance">صيانة ودعم</option>
+            <option value="it">إدارة مرافق حاسوبية</option>
+            <option value="research">دراسة تقنية</option>
+            <option value="cards">بطاقات تهنئة</option>
+            <option value="notsure">غير متأكد</option>
+          </select>
+        </div>
+        <div><label>الميزانية؟</label>
+          <select id="budget">
+            <option value="low">أقل من 1000 ريال</option>
+            <option value="mid">1000 - 5000 ريال</option>
+            <option value="high">أكثر من 5000 ريال</option>
+            <option value="monthly">اشتراك شهري</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn" onclick="recommend()">اقترح لي الخدمة</button>
+      <div class="result" id="result"></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div style="background:linear-gradient(135deg,#0f766e,#115e59);color:#fff;border-radius:24px;padding:34px;text-align:center">
+      <h2 style="margin-bottom:8px">جاهز تبدأ؟</h2>
+      <p style="margin-bottom:20px">أرسل احتياجك وسنرد عليك بعرض مبدئي.</p>
+      <a class="btn btn-wa" id="waMain" href="#">تواصل عبر واتساب</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <div><strong>حلول تقنية</strong><p style="font-size:.9rem;color:#94a3b8;margin-top:6px">خدمات تقنية متكاملة</p></div>
+    <div><strong>تواصل</strong><p style="font-size:.9rem;color:#94a3b8;margin-top:6px">واتساب: <a href="#" id="waFooter" style="color:#99f6e4">اضغط هنا</a></p></div>
+  </div>
+</footer>
+
+<script>
+const WHATSAPP_NUMBER = "9665XXXXXXXX";
+
+const services = [
+  {id:"website",title:"تصميم مواقع إلكترونية",badge:"الأكثر طلباً",desc:"موقع سريع ومتجاوب يعرض خدماتك.",features:["تصميم متجاوب","صفحات تعريفية","ربط واتساب"]},
+  {id:"software",title:"برمجة برمجيات خاصة",badge:"حل مخصص",desc:"أدوات وأنظمة صغيرة تحل مشكلة محددة.",features:["تحليل الاحتياج","واجهة بسيطة","قواعد بيانات"]},
+  {id:"maintenance",title:"صيانة ودعم فني",badge:"دعم",desc:"متابعة التحديثات وإصلاح الأعطال.",features:["فحص دوري","نسخ احتياطي","دعم عن بعد"]},
+  {id:"research",title:"بحوث ودراسات حاسوبية",badge:"قرار أفضل",desc:"تشخيص تقني ودراسة جدوى.",features:["تقييم البنية","تحليل الاحتياج","توصيات"]},
+  {id:"it",title:"إدارة مرافق حاسوبية",badge:"اشتراك شهري",desc:"إدارة الشبكة والأجهزة.",features:["متابعة الشبكة","نسخ احتياطي","دعم"]},
+  {id:"cards",title:"بطاقات تهنئة",badge:"تصميم",desc:"بطاقات مناسبات رسمية وشخصية.",features:["عيد ووطنية","ترقيات","تعديل سريع"]},
+  {id:"care",title:"رعاية موقع شهرية",badge:"اشتراك",desc:"اطمئن على موقعك شهرياً.",features:["تحديثات أمنية","نسخ احتياطي","تعديلات"]},
+  {id:"diagnostic",title:"تشخيص تقني شامل",badge:"ابدأ هنا",desc:"لا تعرف من أين تبدأ؟ نساعدك.",features:["جلسة تشخيص","خطة تنفيذ","عرض سعر"]}
+];
+
+const grid = document.getElementById("servicesGrid");
+services.forEach(s => {
+  const div = document.createElement("div");
+  div.className = "card";
+  div.innerHTML = `<span class="badge">${s.badge}</span><h3>${s.title}</h3><p>${s.desc}</p><ul>${s.features.map(f=>`<li>${f}</li>`).join("")}</ul><a class="btn btn-outline" href="#" onclick="contactService('${s.id}');return false;">اطلب عرض سعر</a>`;
+  grid.appendChild(div);
+});
+
+function waLink(text){return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`}
+
+function contactService(id){
+  const s = services.find(x=>x.id===id);
+  window.open(waLink(`مرحباً، أرغب في خدمة: ${s.title}`), "_blank");
+}
+
+function recommend(){
+  const client = document.getElementById("clientType").value;
+  const need = document.getElementById("need").value;
+  const budget = document.getElementById("budget").value;
+  let id = "diagnostic";
+  if(need==="website") id = (budget==="monthly")?"care":"website";
+  else if(need==="software") id="software";
+  else if(need==="maintenance") id = (budget==="monthly")?"care":"maintenance";
+  else if(need==="it") id="it";
+  else if(need==="research") id="research";
+  else if(need==="cards") id="cards";
+  const s = services.find(x=>x.id===id);
+  const ct = {individual:"فرد",small:"شركة صغيرة",org:"مؤسسة"}[client];
+  const result = document.getElementById("result");
+  result.classList.add("show");
+  result.innerHTML = `<h3>الخدمة المقترحة: ${s.title}</h3><p>${s.desc}</p><a class="btn btn-wa" target="_blank" href="${waLink(`مرحباً، أنا ${ct}. احتياجي: ${need}. الميزانية: ${budget}. الخدمة المقترحة: ${s.title}`)}">تواصل بخصوص هذه الخدمة</a>`;
+  result.scrollIntoView({behavior:"smooth",block:"center"});
+}
+
+document.getElementById("waMain").href = waLink("مرحباً، أرغب في الاستفسار عن خدماتكم.");
+document.getElementById("waFooter").href = waLink("مرحباً، أرغب في الاستفسار عن خدماتكم.");
+</script>
+</body>
+</html>
