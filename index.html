@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>شركة آفاق لتصميم المواقع الإلكترونية</title>
+<meta name="description" content="شركة آفاق لتصميم المواقع الإلكترونية والبرمجيات الخاصة، الصيانة، إدارة المرافق الحاسوبية، الدراسات التقنية، وبطاقات التهنئة في الكويت.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Tahoma,Arial,sans-serif;background:#f8fafc;color:#0f172a;line-height:1.8}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{width:min(1120px,92%);margin:auto}
+header{background:#fff;border-bottom:2px solid #e2e8f0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;font-weight:bold;font-size:1.05rem;color:#062D4F;line-height:1.3}
+.logo img{height:50px;width:auto;}
+.nav-links{display:flex;gap:18px;flex-wrap:wrap;font-size:.95rem;font-weight:bold;color:#062D4F}
+.nav-links a:hover{color:#287AB4}
+.btn{display:inline-block;padding:12px 22px;border-radius:12px;background:#287AB4;color:#fff;font-weight:bold;border:0;cursor:pointer;font-size:1rem;transition:.2s;text-align:center}
+.btn:hover{background:#062D4F}
+.btn-outline{background:transparent;color:#287AB4;border:2px solid #287AB4}
+.btn-outline:hover{background:#287AB4;color:#fff}
+.btn-wa{background:#25D366}
+.btn-wa:hover{background:#1da851}
+.btn-insta{background:linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)}
+.btn-insta:hover{opacity:0.9}
+.btn-email{background:#fff;color:#062D4F}
+.btn-email:hover{background:#e2e8f0}
+.hero{padding:50px 0 40px;background:linear-gradient(135deg,#f0f9ff,#e0f2fe 60%,#fff)}
+.hero-wrap{display:flex;gap:30px;align-items:center;flex-wrap:wrap}
+.hero-text{flex:1;min-width:280px}
+.hero-img{flex:1;min-width:280px}
+.hero-img img{width:100%;border-radius:20px;box-shadow:0 20px 40px rgba(6,45,79,.15)}
+.hero h1{font-size:clamp(1.6rem,4vw,2.6rem);margin-bottom:16px;line-height:1.35;color:#062D4F}
+.hero p{font-size:1.05rem;color:#475569;margin-bottom:26px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+section{padding:56px 0}
+.section-title{font-size:clamp(1.4rem,3vw,2rem);margin-bottom:8px;color:#062D4F}
+.section-sub{color:#64748b;margin-bottom:28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:18px;overflow:hidden;box-shadow:0 6px 20px rgba(6,45,79,.04);transition:.2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(6,45,79,.1)}
+.card-img{width:100%;height:160px;object-fit:cover;background:#e0f2fe}
+.card-body{padding:20px}
+.card h3{margin-bottom:8px;color:#062D4F;font-size:1.1rem}
+.card p{color:#64748b;margin-bottom:14px;font-size:.94rem}
+.card ul{list-style:none;margin-bottom:16px;font-size:.9rem}
+.card li{margin-bottom:6px;padding-right:20px;position:relative}
+.card li::before{content:"✓";position:absolute;right:0;color:#F5A623;font-weight:bold;font-size:1.1rem}
+.badge{display:inline-block;background:#FEF3C7;color:#B45309;padding:4px 10px;border-radius:999px;font-size:.75rem;margin-bottom:10px;font-weight:bold}
+.about-box{background:#f0f9ff;border-right:6px solid #F5A623;padding:30px;border-radius:16px;box-shadow:0 10px 30px rgba(6,45,79,.05);font-size:1.05rem;color:#334155}
+.about-box p{margin-bottom:16px;line-height:1.9}
+.about-box p:last-child{margin-bottom:0}
+.testimonial-card{background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:24px;box-shadow:0 6px 20px rgba(6,45,79,.04);display:flex;flex-direction:column;justify-content:space-between}
+.stars{color:#F5A623;font-size:1.2rem;margin-bottom:12px;letter-spacing:2px}
+.testimonial-text{color:#475569;font-style:italic;margin-bottom:20px;position:relative}
+.testimonial-text::before{content:"”";font-size:3rem;color:#cbd5e1;position:absolute;top:-20px;right:-10px;opacity:0.3;z-index:0}
+.client-info{display:flex;align-items:center;gap:12px;border-top:1px solid #e2e8f0;padding-top:16px;margin-top:auto}
+.client-avatar{width:45px;height:45px;border-radius:50%;background:#287AB4;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:1.2rem}
+.client-name{font-weight:bold;color:#062D4F;font-size:1rem;margin-bottom:2px}
+.client-title{font-size:.85rem;color:#64748b}
+.selector{background:#fff;border:1px solid #e2e8f0;border-radius:22px;padding:26px;box-shadow:0 10px 30px rgba(6,45,79,.05)}
+.form-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:18px}
+label{display:block;font-weight:bold;margin-bottom:6px;font-size:.95rem;color:#062D4F}
+select{width:100%;padding:12px;border-radius:12px;border:1px solid #cbd5e1;font-size:1rem;font-family:inherit;background:#fff}
+.result{margin-top:20px;padding:20px;border-radius:16px;background:#f0f9ff;border:1px solid #bae6fd;display:none}
+.result.show{display:block}
+.result h3{margin-bottom:8px;color:#062D4F}
+.contact-box{background:linear-gradient(135deg,#062D4F,#287AB4);color:#fff;border-radius:24px;padding:40px;text-align:center}
+.contact-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+footer{background:#062D4F;color:#e2e8f0;padding:36px 0}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+.footer-grid h4{margin-bottom:10px;color:#F5A623}
+.footer-grid p{font-size:.92rem;color:#cbd5e1;margin-bottom:8px}
+.footer-grid a{color:#7DD3FC;transition:.2s}
+.footer-grid a:hover{color:#fff}
+@media(max-width:600px){section{padding:40px 0}.hero{padding:36px 0 30px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="logo">
+      <img src="logo.png" alt="شعار آفاق">
+      <span>شركة آفاق<br><small style="font-weight:normal;font-size:.75rem;color:#64748b">لتصميم المواقع الإلكترونية</small></span>
+    </div>
+    <nav class="nav-links">
+      <a href="#about">من نحن</a>
+      <a href="#services">الخدمات</a>
+      <a href="#testimonials">آراء العملاء</a>
+      <a href="#selector">اختر المناسب</a>
+      <a href="#contact">تواصل</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-wrap">
+    <div class="hero-text">
+      <h1>شركة آفاق لتصميم المواقع الإلكترونية</h1>
+      <p>تصميم مواقع، برمجة برمجيات خاصة، صيانة ودعم، إدارة مرافق حاسوبية، دراسات تقنية، وبطاقات تهنئة — كل ذلك من مكان واحد في الكويت.</p>
+      <div class="hero-actions">
+        <a href="#selector" class="btn">اختر خدمتك المناسبة</a>
+        <a href="#services" class="btn btn-outline">تصفح الخدمات</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="hero.jpg" alt="خدمات آفاق" onerror="this.style.display='none'">
+    </div>
+  </div>
+</section>
+
+<section id="about" style="background:#fff;">
+  <div class="container">
+    <h2 class="section-title">من نحن</h2>
+    <div class="about-box">
+      <p>تأسست شركة آفاق لتصميم المواقع الإلكترونية بإدارة كويتية، وتضم فريقاً من محللي النظم والمبرمجين ذوي خبرات ممتدة لسنوات طويلة.</p>
+      <p>يمتلك فريقنا خبرات متعددة في مجالات مختلفة؛ فمنهم الأكاديميون في جامعات مرموقة، ومنهم المطورون في مجال العملات الإلكترونية. ونسعى دائماً لتقديم ما نملكه من إمكانيات وطاقات لتكون في صالح عملائنا الأعزاء.</p>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <h2 class="section-title">خدماتنا</h2>
+    <p class="section-sub">اضغط على الخدمة أو استخدم المستشار بالأسفل لاختيار الأنسب لك.</p>
+    <div class="grid" id="servicesGrid"></div>
+  </div>
+</section>
+
+<section id="testimonials" style="background:#f0f9ff;">
+  <div class="container">
+    <h2 class="section-title">آراء عملائنا</h2>
+    <p class="section-sub">نفخر بثقة عملائنا، وهذه بعض من تجاربهم معنا.</p>
+    <div class="grid">
+      <div class="testimonial-card">
+        <div>
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">تجربة رائعة جداً مع شركة آفاق. تم تسليم الموقع في الوقت المحدد وبجودة تفوق التوقعات. شكراً للفريق على الاحترافية.</p>
+        </div>
+        <div class="client-info">
+          <div class="client-avatar">ع</div>
+          <div>
+            <div class="client-name">عبدالله السالم</div>
+            <div class="client-title">صاحب متجر إلكتروني</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div>
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">الفريق محترف جداً ولديه خبرة عالية. ساعدوني في برمجة نظام خاص لمكتبي ووفر علي الكثير من الوقت والجهد.</p>
+        </div>
+        <div class="client-info">
+          <div class="client-avatar">س</div>
+          <div>
+            <div class="client-name">سارة العلي</div>
+            <div class="client-title">مديرة مكتب استشارات</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div>
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">خدمة العملاء ممتازة، والموقع سريع ومتجاوب مع الجوال. أنصح بالتعامل معهم لأي شخص يبحث عن الجودة.</p>
+        </div>
+        <div class="client-info">
+          <div class="client-avatar">م</div>
+          <div>
+            <div class="client-name">محمد الخالد</div>
+            <div class="client-title">مؤسس شركة ناشئة</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="selector">
+  <div class="container">
+    <h2 class="section-title">اختر الخدمة المناسبة لك</h2>
+    <p class="section-sub">أجب على 3 أسئلة وسنقترح لك الخدمة المناسبة.</p>
+    <div class="selector">
+      <div class="form-row">
+        <div><label>أنت؟</label>
+          <select id="clientType">
+            <option value="individual">فرد</option>
+            <option value="small">شركة صغيرة / متجر</option>
+            <option value="org">مؤسسة أو جهة</option>
+          </select>
+        </div>
+        <div><label>احتياجك؟</label>
+          <select id="need">
+            <option value="website">موقع إلكتروني</option>
+            <option value="software">برمجة نظام خاص</option>
+            <option value="maintenance">صيانة ودعم</option>
+            <option value="it">إدارة مرافق حاسوبية</option>
+            <option value="research">دراسة تقنية</option>
+            <option value="cards">بطاقات تهنئة</option>
+            <option value="notsure">غير متأكد</option>
+          </select>
+        </div>
+        <div><label>الميزانية؟</label>
+          <select id="budget">
+            <option value="low">أقل من 100 دينار</option>
+            <option value="mid">100 - 500 دينار</option>
+            <option value="high">أكثر من 500 دينار</option>
+            <option value="monthly">اشتراك شهري</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn" onclick="recommend()">اقترح لي الخدمة</button>
+      <div class="result" id="result"></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact-box">
+      <h2 style="margin-bottom:8px;color:#fff">جاهز تبدأ؟</h2>
+      <p style="margin-bottom:20px;opacity:.95">أرسل احتياجك وسنرد عليك بعرض مبدئي.</p>
+      <div class="contact-actions">
+        <a class="btn btn-wa" id="waMain" href="#">تواصل عبر واتساب</a>
+        <a class="btn btn-insta" href="https://www.instagram.com/afaq.web" target="_blank">تابعنا على انستقرام</a>
+        <a class="btn btn-email" href="mailto:afaqwebd@gmail.com">راسلنا عبر البريد</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <h4>شركة آفاق</h4>
+      <p>لتصميم المواقع الإلكترونية والبرمجيات الخاصة، الصيانة، إدارة المرافق الحاسوبية، الدراسات التقنية، وبطاقات التهنئة.</p>
+    </div>
+    <div>
+      <h4>تواصل معنا</h4>
+      <p>واتساب: <a href="#" id="waFooter">41012020</a></p>
+      <p>انستقرام: <a href="https://www.instagram.com/afaq.web" target="_blank">@afaq.web</a></p>
+      <p>البريد: <a href="mailto:afaqwebd@gmail.com">afaqwebd@gmail.com</a></p>
+      <p>الكويت</p>
+    </div>
+    <div>
+      <h4>ملاحظة</h4>
+      <p>الأسعار تُعرض بعد التشخيص.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const WHATSAPP_NUMBER = "96541012020";
+const services = [
+  {id:"website",title:"تصميم مواقع إلكترونية",badge:"الأكثر طلباً",desc:"موقع سريع ومتجاوب يعرض خدماتك ويجلب لك عملاء.",features:["تصميم متجاوب للجوال","صفحات تعريفية وخدمات","ربط واتساب ونموذج تواصل","تحسين أساسي لمحركات البحث"]},
+  {id:"software",title:"تصميم وبرمجة البرمجيات الخاصة",badge:"حل مخصص",desc:"أدوات وأنظمة صغيرة تحل مشكلة محددة في عملك.",features:["تحليل الاحتياج","واجهة استخدام بسيطة","ربط قواعد بيانات","تسليم مع دليل استخدام"]},
+  {id:"maintenance",title:"صيانة البرمجيات والدعم الفني",badge:"دعم",desc:"متابعة التحديثات والأعطال وتحسين أداء الأنظمة.",features:["فحص دوري","نسخ احتياطي","إصلاح أعطال","دعم عن بعد"]},
+  {id:"research",title:"بحوث ودراسات حاسوبية",badge:"قرار أفضل",desc:"تشخيص تقني ودراسة جدوى قبل الاستثمار في نظام أو موقع.",features:["تقييم البنية الحالية","تحليل الاحتياج","توصيات عملية","تقرير واضح"]},
+  {id:"it",title:"إدارة المرافق الحاسوبية",badge:"اشتراك شهري",desc:"إدارة الشبكة والأجهزة والنسخ الاحتياطي للمكاتب.",features:["متابعة الشبكة","إدارة الأجهزة","نسخ احتياطي","دعم مستخدمين"]},
+  {id:"cards",title:"بطاقات التهنئة",badge:"تصميم",desc:"بطاقات مناسبات رسمية وشخصية بجودة موحدة.",features:["بطاقات عيد ووطنية","ترقيات وتخرج","تعديل سريع","باقة للشركات"]},
+  {id:"care",title:"باقة رعاية الموقع الشهرية",badge:"اشتراك",desc:"اطمئن على موقعك شهرياً دون متابعة تقنية.",features:["تحديثات أمنية","نسخ احتياطي","مراقبة الاستضافة","تعديلات بسيطة"]},
+  {id:"diagnostic",title:"تشخيص تقني شامل",badge:"ابدأ هنا",desc:"لا تعرف من أين تبدأ؟ نجلس معك ونحدد الأولوية.",features:["جلسة تشخيص","تحديد المشكلة","خطة تنفيذ","عرض سعر واضح"]}
+];
+const grid = document.getElementById("servicesGrid");
+services.forEach(s => {
+  const div = document.createElement("div");
+  div.className = "card";
+  div.innerHTML = `<img class="card-img" src="${s.id}.jpg" alt="${s.title}" onerror="this.style.background='linear-gradient(135deg,#287AB4,#F5A623)';this.removeAttribute('src')"><div class="card-body"><span class="badge">${s.badge}</span><h3>${s.title}</h3><p>${s.desc}</p><ul>${s.features.map(f=>`<li>${f}</li>`).join("")}</ul><a class="btn btn-outline" href="#" onclick="contactService('${s.id}');return false;">اطلب عرض سعر</a></div>`;
+  grid.appendChild(div);
+});
+function waLink(text){return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`}
+function contactService(id){
+  const s = services.find(x=>x.id===id);
+  window.open(waLink(`مرحباً شركة آفاق، أرغب في خدمة: ${s.title}. أرجو إرسال عرض سعر.`), "_blank");
+}
+function recommend(){
+  const client = document.getElementById("clientType").value;
+  const need = document.getElementById("need").value;
+  const budget = document.getElementById("budget").value;
+  let id = "diagnostic";
+  if(need==="website") id = (budget==="monthly")?"care":"website";
+  else if(need==="software") id="software";
+  else if(need==="maintenance") id = (budget==="monthly")?"care":"maintenance";
+  else if(need==="it") id="it";
+  else if(need==="research") id="research";
+  else if(need==="cards") id="cards";
+  const s = services.find(x=>x.id===id);
+  const ct = {individual:"فرد",small:"شركة صغيرة",org:"مؤسسة"}[client];
+  const result = document.getElementById("result");
+  result.classList.add("show");
+  result.innerHTML = `<h3>الخدمة المقترحة: ${s.title}</h3><p>${s.desc}</p><a class="btn btn-wa" target="_blank" href="${waLink(`مرحباً شركة آفاق، أنا ${ct}. احتياجي: ${need}. الميزانية: ${budget}. الخدمة المقترحة: ${s.title}. أرجو التواصل.`)}">تواصل بخصوص هذه الخدمة</a>`;
+  result.scrollIntoView({behavior:"smooth",block:"center"});
+}
+document.getElementById("waMain").href = waLink("مرحباً شركة آفاق، أرغب في الاستفسار عن خدماتكم.");
+document.getElementById("waFooter").href = waLink("مرحباً شركة آفاق، أرغب في الاستفسار عن خدماتكم.");
+</script>
+</body>
+</html>
