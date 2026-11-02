@@ -1,438 +1,502 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>شركة آفاق لتصميم المواقع الإلكترونية | Afaq Web Design</title>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Tahoma,Arial,sans-serif;background:#f8fafc;color:#0f172a;line-height:1.8}
-a{text-decoration:none;color:inherit}
-img{max-width:100%;display:block}
-.container{width:min(1120px,92%);margin:auto}
-header{background:#fff;border-bottom:2px solid #e2e8f0;position:sticky;top:0;z-index:10}
-.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px;flex-wrap:wrap}
-.logo{display:flex;align-items:center;gap:10px;font-weight:bold;font-size:1.05rem;color:#062D4F;line-height:1.3}
-.logo img{height:50px;width:auto;}
-.nav-links{display:flex;gap:18px;flex-wrap:wrap;font-size:.95rem;font-weight:bold;color:#062D4F;align-items:center}
-.nav-links a:hover{color:#287AB4}
-.btn{display:inline-block;padding:12px 22px;border-radius:12px;background:#287AB4;color:#fff;font-weight:bold;border:0;cursor:pointer;font-size:1rem;transition:.2s;text-align:center}
-.btn:hover{background:#062D4F}
-.btn-outline{background:transparent;color:#287AB4;border:2px solid #287AB4}
-.btn-outline:hover{background:#287AB4;color:#fff}
-.btn-wa{background:#25D366}
-.btn-wa:hover{background:#1da851}
-.btn-insta{background:linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)}
-.btn-insta:hover{opacity:0.9}
-.btn-email{background:#fff;color:#062D4F}
-.btn-email:hover{background:#e2e8f0}
-.lang-btn{background:#F5A623;color:#fff;border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-weight:bold;font-family:inherit;font-size:0.9rem}
-.lang-btn:hover{background:#d48b1a}
-.hero{padding:50px 0 40px;background:linear-gradient(135deg,#f0f9ff,#e0f2fe 60%,#fff)}
-.hero-wrap{display:flex;gap:30px;align-items:center;flex-wrap:wrap}
-.hero-text{flex:1;min-width:280px}
-.hero-img{flex:1;min-width:280px}
-.hero-img img{width:100%;border-radius:20px;box-shadow:0 20px 40px rgba(6,45,79,.15)}
-.hero h1{font-size:clamp(1.6rem,4vw,2.6rem);margin-bottom:16px;line-height:1.35;color:#062D4F}
-.hero p{font-size:1.05rem;color:#475569;margin-bottom:26px}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-section{padding:56px 0}
-.section-title{font-size:clamp(1.4rem,3vw,2rem);margin-bottom:8px;color:#062D4F}
-.section-sub{color:#64748b;margin-bottom:28px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
-.card{background:#fff;border:1px solid #e2e8f0;border-radius:18px;overflow:hidden;box-shadow:0 6px 20px rgba(6,45,79,.04);transition:.2s}
-.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(6,45,79,.1)}
-.card-img{width:100%;height:160px;object-fit:cover;background:#e0f2fe}
-.card-body{padding:20px}
-.card h3{margin-bottom:8px;color:#062D4F;font-size:1.1rem}
-.card p{color:#64748b;margin-bottom:14px;font-size:.94rem}
-.card ul{list-style:none;margin-bottom:16px;font-size:.9rem}
-.card li{margin-bottom:6px;padding-right:20px;position:relative}
-.card li::before{content:"✓";position:absolute;right:0;color:#F5A623;font-weight:bold;font-size:1.1rem}
-.badge{display:inline-block;background:#FEF3C7;color:#B45309;padding:4px 10px;border-radius:999px;font-size:.75rem;margin-bottom:10px;font-weight:bold}
-.about-box{background:#f0f9ff;border-right:6px solid #F5A623;padding:30px;border-radius:16px;box-shadow:0 10px 30px rgba(6,45,79,.05);font-size:1.05rem;color:#334155;transition:.3s}
-html[dir="ltr"] .about-box{border-right:none;border-left:6px solid #F5A623}
-.about-box p{margin-bottom:16px;line-height:1.9}
-.about-box p:last-child{margin-bottom:0}
-.testimonial-card{background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:24px;box-shadow:0 6px 20px rgba(6,45,79,.04);display:flex;flex-direction:column;justify-content:space-between}
-.stars{color:#F5A623;font-size:1.2rem;margin-bottom:12px;letter-spacing:2px}
-.testimonial-text{color:#475569;font-style:italic;margin-bottom:20px;position:relative}
-.testimonial-text::before{content:"”";font-size:3rem;color:#cbd5e1;position:absolute;top:-20px;right:-10px;opacity:0.3;z-index:0}
-html[dir="ltr"] .testimonial-text::before{right:auto;left:-10px;}
-.client-info{display:flex;align-items:center;gap:12px;border-top:1px solid #e2e8f0;padding-top:16px;margin-top:auto}
-.client-avatar{width:45px;height:45px;border-radius:50%;background:#287AB4;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:1.2rem}
-.client-name{font-weight:bold;color:#062D4F;font-size:1rem;margin-bottom:2px}
-.client-title{font-size:.85rem;color:#64748b}
-.selector{background:#fff;border:1px solid #e2e8f0;border-radius:22px;padding:26px;box-shadow:0 10px 30px rgba(6,45,79,.05)}
-.form-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:18px}
-label{display:block;font-weight:bold;margin-bottom:6px;font-size:.95rem;color:#062D4F}
-select{width:100%;padding:12px;border-radius:12px;border:1px solid #cbd5e1;font-size:1rem;font-family:inherit;background:#fff}
-.result{margin-top:20px;padding:20px;border-radius:16px;background:#f0f9ff;border:1px solid #bae6fd;display:none}
-.result.show{display:block}
-.result h3{margin-bottom:8px;color:#062D4F}
-.contact-box{background:linear-gradient(135deg,#062D4F,#287AB4);color:#fff;border-radius:24px;padding:40px;text-align:center}
-.contact-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px}
-footer{background:#062D4F;color:#e2e8f0;padding:36px 0}
-.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
-.footer-grid h4{margin-bottom:10px;color:#F5A623}
-.footer-grid p{font-size:.92rem;color:#cbd5e1;margin-bottom:8px}
-.footer-grid a{color:#7DD3FC;transition:.2s}
-.footer-grid a:hover{color:#fff}
-@media(max-width:600px){section{padding:40px 0}.hero{padding:36px 0 30px}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="تصميم مواقع، برمجة برمجيات، صيانة ودعم، إدارة مرافق حاسوبية، دراسات تقنية، وبطاقات تهنئة — كل ذلك من مكان واحد في الكويت." />
+  <title>خدمات تقنية متكاملة في الكويت</title>
+
+  <style>
+    :root {
+      --primary: #0f766e;
+      --primary-dark: #115e59;
+      --accent: #f59e0b;
+      --bg: #f8fafc;
+      --text: #0f172a;
+      --muted: #475569;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 32px));
+      margin-inline: auto;
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 1.1rem;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav a:hover {
+      color: var(--primary);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: 0.2s ease;
+      font-size: 0.95rem;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: #fff;
+      border-color: var(--border);
+      color: var(--text);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 84px 0 64px;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(15, 118, 110, 0.12), transparent 35%),
+        radial-gradient(circle at 90% 20%, rgba(245, 158, 11, 0.12), transparent 30%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      border: 1px solid var(--border);
+      color: var(--primary-dark);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 60ch;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h2 {
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+    }
+
+    .check-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .check-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: var(--muted);
+    }
+
+    .check-list li::before {
+      content: "✓";
+      flex: 0 0 auto;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(15, 118, 110, 0.12);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-size: 0.8rem;
+      font-weight: 900;
+      margin-top: 4px;
+    }
+
+    /* Sections */
+    section {
+      padding: 64px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 36px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.6rem, 3vw, 2.3rem);
+      margin-bottom: 10px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      transition: 0.2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(15, 118, 110, 0.35);
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(15, 118, 110, 0.1);
+      color: var(--primary);
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+    }
+
+    .service-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* CTA */
+    .cta {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: #fff;
+      border-radius: 28px;
+      padding: 48px 28px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 24px;
+    }
+
+    .cta .btn {
+      background: #fff;
+      color: var(--primary-dark);
+    }
+
+    .cta .btn:hover {
+      transform: translateY(-1px);
+      background: #f8fafc;
+    }
+
+    /* Footer */
+    .site-footer {
+      padding: 28px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 56px 0 40px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .header-inner {
+        min-height: 64px;
+      }
+
+      .btn {
+        padding: 11px 18px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <div class="container nav">
-    <div class="logo">
-      <img src="logo.png" alt="Afaq Logo" onerror="this.style.display='none'">
-      <span id="logo-text">شركة آفاق<br><small style="font-weight:normal;font-size:.75rem;color:#64748b">لتصميم المواقع الإلكترونية</small></span>
-    </div>
-    <nav class="nav-links">
-      <a href="#about" id="nav-about">من نحن</a>
-      <a href="#services" id="nav-services">الخدمات</a>
-      <a href="#testimonials" id="nav-testi">آراء العملاء</a>
-      <a href="#selector" id="nav-selector">اختر المناسب</a>
-      <a href="#contact" id="nav-contact">تواصل</a>
-      <button class="lang-btn" onclick="toggleLang()" id="lang-btn">English</button>
-    </nav>
-  </div>
-</header>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand" aria-label="الصفحة الرئيسية">
+        <span class="brand-mark">ت</span>
+        <span>حلول تقنية</span>
+      </a>
 
-<section class="hero">
-  <div class="container hero-wrap">
-    <div class="hero-text">
-      <h1 id="hero-title">شركة آفاق لتصميم المواقع الإلكترونية</h1>
-      <p id="hero-desc">تصميم مواقع، برمجة برمجيات خاصة، صيانة ودعم، إدارة مرافق حاسوبية، دراسات تقنية، وبطاقات تهنئة — كل ذلك من مكان واحد في الكويت.</p>
-      <div class="hero-actions">
-        <a href="#selector" class="btn" id="hero-btn1">اختر خدمتك المناسبة</a>
-        <a href="#services" class="btn btn-outline" id="hero-btn2">تصفح الخدمات</a>
-      </div>
-    </div>
-    <div class="hero-img">
-      <img src="hero.jpg" alt="Afaq Services" onerror="this.style.display='none'">
-    </div>
-  </div>
-</section>
+      <nav class="nav" aria-label="التنقل الرئيسي">
+        <a href="#services">الخدمات</a>
+        <a href="#about">من نحن</a>
+        <a href="#contact">تواصل معنا</a>
+      </nav>
 
-<section id="about" style="background:#fff;">
-  <div class="container">
-    <h2 class="section-title" id="about-title">من نحن</h2>
-    <div class="about-box">
-      <p id="about-p1">تأسست شركة آفاق لتصميم المواقع الإلكترونية بإدارة كويتية، وتضم فريقاً من محللي النظم والمبرمجين ذوي خبرات ممتدة لسنوات طويلة.</p>
-      <p id="about-p2">يمتلك فريقنا خبرات متعددة في مجالات مختلفة، ونسعى دائماً لتقديم ما نملكه من إمكانيات وطاقات لتكون في صالح عملائنا الأعزاء.</p>
+      <a href="#contact" class="btn btn-primary">اطلب خدمة</a>
     </div>
-  </div>
-</section>
+  </header>
 
-<section id="services">
-  <div class="container">
-    <h2 class="section-title" id="services-title">خدماتنا</h2>
-    <p class="section-sub" id="services-sub">اضغط على الخدمة أو استخدم المستشار بالأسفل لاختيار الأنسب لك.</p>
-    <div class="grid" id="servicesGrid"></div>
-  </div>
-</section>
-
-<section id="testimonials" style="background:#f0f9ff;">
-  <div class="container">
-    <h2 class="section-title" id="testi-title">آراء عملائنا</h2>
-    <p class="section-sub" id="testi-sub">نفخر بثقة عملائنا، وهذه بعض من تجاربهم معنا.</p>
-    <div class="grid">
-      <div class="testimonial-card">
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
         <div>
-          <div class="stars">★★★★★</div>
-          <p class="testimonial-text" id="testi-p1">تجربة رائعة جداً مع شركة آفاق. تم تسليم الموقع في الوقت المحدد وبجودة تفوق التوقعات. شكراً للفريق على الاحترافية.</p>
-        </div>
-        <div class="client-info">
-          <div class="client-avatar">ع</div>
-          <div>
-            <div class="client-name" id="testi-n1">عبدالله السالم</div>
-            <div class="client-title" id="testi-t1">صاحب متجر إلكتروني</div>
+          <div class="eyebrow">خدمات تقنية متكاملة في الكويت</div>
+
+          <h1>
+            كل احتياجاتك التقنية
+            <span>من مكان واحد</span>
+          </h1>
+
+          <p>
+            تصميم مواقع، برمجة برمجيات خاصة، صيانة ودعم، إدارة مرافق حاسوبية، دراسات تقنية،
+            وبطاقات تهنئة — كل ذلك من مكان واحد في الكويت.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#services" class="btn btn-primary">تصفح الخدمات</a>
+            <a href="#contact" class="btn btn-outline">تواصل معنا</a>
           </div>
         </div>
-      </div>
-      <div class="testimonial-card">
-        <div>
-          <div class="stars">★★★★★</div>
-          <p class="testimonial-text" id="testi-p2">الفريق محترف جداً ولديه خبرة عالية. ساعدوني في برمجة نظام خاص لمكتبي ووفر علي الكثير من الوقت والجهد.</p>
-        </div>
-        <div class="client-info">
-          <div class="client-avatar">س</div>
-          <div>
-            <div class="client-name" id="testi-n2">سارة العلي</div>
-            <div class="client-title" id="testi-t2">مديرة مكتب استشارات</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <div>
-          <div class="stars">★★★★★</div>
-          <p class="testimonial-text" id="testi-p3">خدمة العملاء ممتازة، والموقع سريع ومتجاوب مع الجوال. أنصح بالتعامل معهم لأي شخص يبحث عن الجودة.</p>
-        </div>
-        <div class="client-info">
-          <div class="client-avatar">م</div>
-          <div>
-            <div class="client-name" id="testi-n3">محمد الخالد</div>
-            <div class="client-title" id="testi-t3">مؤسس شركة ناشئة</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section id="selector">
-  <div class="container">
-    <h2 class="section-title" id="sel-title">اختر الخدمة المناسبة لك</h2>
-    <p class="section-sub" id="sel-sub">أجب على 3 أسئلة وسنقترح لك الخدمة المناسبة.</p>
-    <div class="selector">
-      <div class="form-row">
-        <div><label id="lbl-client">أنت؟</label>
-          <select id="clientType">
-            <option value="individual" data-ar="فرد" data-en="Individual">فرد</option>
-            <option value="small" data-ar="شركة صغيرة / متجر" data-en="Small Business">شركة صغيرة / متجر</option>
-            <option value="org" data-ar="مؤسسة أو جهة" data-en="Organization">مؤسسة أو جهة</option>
-          </select>
+        <aside class="hero-card">
+          <h2>لماذا تختارنا؟</h2>
+          <ul class="check-list">
+            <li>حلول مخصصة تناسب احتياجات عملك.</li>
+            <li>دعم وصيانة سريعة وموثوقة.</li>
+            <li>خبرة في السوق الكويتي.</li>
+            <li>تواصل واضح ومتابعة مستمرة.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>خدماتنا</h2>
+          <p>اختر الخدمة المناسبة لك، ونحن نتولى الباقي.</p>
         </div>
-        <div><label id="lbl-need">احتياجك؟</label>
-          <select id="need">
-            <option value="website" data-ar="موقع إلكتروني" data-en="Website">موقع إلكتروني</option>
-            <option value="software" data-ar="برمجة نظام خاص" data-en="Software">برمجة نظام خاص</option>
-            <option value="maintenance" data-ar="صيانة ودعم" data-en="Maintenance">صيانة ودعم</option>
-            <option value="it" data-ar="إدارة مرافق حاسوبية" data-en="IT Management">إدارة مرافق حاسوبية</option>
-            <option value="research" data-ar="دراسة تقنية" data-en="Research">دراسة تقنية</option>
-            <option value="cards" data-ar="بطاقات تهنئة" data-en="Cards">بطاقات تهنئة</option>
-            <option value="notsure" data-ar="غير متأكد" data-en="Not sure">غير متأكد</option>
-          </select>
-        </div>
-        <div><label id="lbl-budget">الميزانية؟</label>
-          <select id="budget">
-            <option value="low" data-ar="أقل من 100 دينار" data-en="Under 100 KD">أقل من 100 دينار</option>
-            <option value="mid" data-ar="100 - 500 دينار" data-en="100 - 500 KD">100 - 500 دينار</option>
-            <option value="high" data-ar="أكثر من 500 دينار" data-en="Over 500 KD">أكثر من 500 دينار</option>
-            <option value="monthly" data-ar="اشتراك شهري" data-en="Monthly Subscription">اشتراك شهري</option>
-          </select>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon">🌐</div>
+            <h3>تصميم مواقع</h3>
+            <p>مواقع سريعة، متجاوبة، وعصرية تناسب هوية نشاطك التجاري.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">💻</div>
+            <h3>برمجة برمجيات خاصة</h3>
+            <p>أنظمة وبرامج مخصصة تسهّل عملك وتزيد من كفاءة فريقك.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🛠️</div>
+            <h3>صيانة ودعم</h3>
+            <p>صيانة دورية ودعم فني سريع للأجهزة والأنظمة.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🏢</div>
+            <h3>إدارة مرافق حاسوبية</h3>
+            <p>إدارة شاملة للشبكات والأجهزة والأنظمة في منشأتك.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">📊</div>
+            <h3>دراسات تقنية</h3>
+            <p>تحليل الاحتياجات ووضع خطط تقنية مناسبة لميزانيتك.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🎨</div>
+            <h3>بطاقات تهنئة</h3>
+            <p>تصميم بطاقات تهنئة احترافية للمناسبات والتهاني الرسمية.</p>
+          </article>
         </div>
       </div>
-      <button class="btn" onclick="recommend()" id="sel-btn">اقترح لي الخدمة</button>
-      <div class="result" id="result"></div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section id="contact">
-  <div class="container">
-    <div class="contact-box">
-      <h2 style="margin-bottom:8px;color:#fff" id="contact-title">جاهز تبدأ؟</h2>
-      <p style="margin-bottom:20px;opacity:.95" id="contact-desc">أرسل احتياجك وسنرد عليك بعرض مبدئي.</p>
-      <div class="contact-actions">
-        <a class="btn btn-wa" id="waMain" href="#">تواصل عبر واتساب</a>
-        <a class="btn btn-insta" href="https://www.instagram.com/afaq.web" target="_blank" id="contact-insta">تابعنا على انستقرام</a>
-        <a class="btn btn-email" href="mailto:afaqwebd@gmail.com" id="contact-email">راسلنا عبر البريد</a>
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <h2>من نحن</h2>
+          <p>
+            نقدم حلولاً تقنية عملية للأفراد والشركات في الكويت، من تصميم المواقع
+            والبرمجيات إلى الصيانة والدعم وإدارة المرافق الحاسوبية.
+          </p>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<footer>
-  <div class="container footer-grid">
-    <div>
-      <h4 id="foot-title">شركة آفاق</h4>
-      <p id="foot-desc">لتصميم المواقع الإلكترونية والبرمجيات الخاصة، الصيانة، إدارة المرافق الحاسوبية، الدراسات التقنية، وبطاقات التهنئة.</p>
-    </div>
-    <div>
-      <h4 id="foot-contact">تواصل معنا</h4>
-      <p>WhatsApp: <a href="#" id="waFooter">41012020</a></p>
-      <p>Instagram: <a href="https://www.instagram.com/afaq.web" target="_blank">@afaq.web</a></p>
-      <p>Email: <a href="mailto:afaqwebd@gmail.com">afaqwebd@gmail.com</a></p>
-      <p id="foot-loc">الكويت</p>
-    </div>
-    <div>
-      <h4 id="foot-note-title">ملاحظة</h4>
-      <p id="foot-note-desc">الأسعار تُعرض بعد التشخيص.</p>
-    </div>
-  </div>
-</footer>
+    <!-- CTA -->
+    <section id="contact">
+      <div class="container">
+        <div class="cta">
+          <h2>جاهز لبدء مشروعك؟</h2>
+          <p>تواصل معنا اليوم لمناقشة احتياجاتك والحصول على عرض مناسب.</p>
+          <a href="tel:+96500000000" class="btn">اتصل بنا</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<script>
-let currentLang = 'ar';
-const WHATSAPP_NUMBER = "96541012020";
-const translations = {
-  ar: {
-    logo: "شركة آفاق<br><small style='font-weight:normal;font-size:.75rem;color:#64748b'>لتصميم المواقع الإلكترونية</small>",
-    navAbout: "من نحن", navServices: "الخدمات", navTesti: "آراء العملاء", navSelector: "اختر المناسب", navContact: "تواصل",
-    heroTitle: "شركة آفاق لتصميم المواقع الإلكترونية",
-    heroDesc: "تصميم مواقع، برمجة برمجيات خاصة، صيانة ودعم، إدارة مرافق حاسوبية، دراسات تقنية، وبطاقات تهنئة — كل ذلك من مكان واحد في الك معويت.",
-    heroBtn1: "اختر خدمتك المناسبة", heroBtn2: "تصفح الخدمات",
-    aboutTitle: "من نحننا",
-    aboutP1: "تأسست شركة آفاق لتصميم المواقع الإلكترونية بإدارة كويت.",
-ية، وتضم فريقاً من محللي النظم والمبرمجين ذوي خبرات ممتدة ل   سنوات طويلة.",
-    aboutP2: "يمتلك فريقنا خبرات متعد testدة في مجالات مختلفة، ونسعى دائماً لتقديم ما نملكه من إمكانيات وطاقاتi لتكون في صالح عملائنا الأعزاء.",
-    servicesTitle: "خدماتنا", servicesSub: "اضغط على الخدمة أو استخدم المستشار بالأسفل لاختيار الأنسب لك.",
-    testiTitle: "آراء عملائنا", testiSub: "نفخر بثقة عملائنا، وهذه بعض من تجاربهمP1: "تجربة رائعة جداً مع شركة آفاق. تم تسليم الموقع في الوقت المحدد وبجودة تفوق التوقعات. شكراً للفريق على الاحترافية.",
-    testiN1: "عبدالله السالم", testiT1: "صاحب متجر إلكتروني",
-    testiP2: "الفريق محترف جداً ولديه خبرة عالية. ساعدوني في برمجة نظام خاص لمكتبي ووفر علي الكثير من الوقت والجهد.",
-    testiN2: "سارة العلي", testiT2: "مديرة مكتب استشارات",
-    testiP3: "خدمة العملاء ممتازة، والموقع سريع ومتجاوب مع الجوال. أنصح بالتعامل معهم لأي شخص يبحث عن الجودة.",
-    testiN3: "محمد الخالد", testiT3: "مؤسس شركة ناشئة",
-    selTitle: "اختر الخدمة المناسبة لك", selSub: "أجب على 3 أسئلة وسنقترح لك الخدمة المناسبة.",
-    lblClient: "أنت؟", lblNeed: "احتياجك؟", lblBudget: "الميزانية؟", selBtn: "اقترح لي الخدمة",
-    contactTitle: "جاهز تبدأ؟", contactDesc: "أرسل احتياجك وسنرد عليك بعرض مبدئي.",
-    contactWa: "تواصل عبر واتساب", contactInsta: "تابعنا على انستقرام", contactEmail: "راسلنا عبر البريد",
-    footTitle: "شركة آفاق", footDesc: "لتصميم المواقع الإلكترونية والبرمجيات الخاصة، الصيانة، إدارة المرافق الحاسوبية، الدراسات التقنية، وبطاقات التهنئة.",
-    footContact: "تواصل معنا", footLoc: "الكويت", footNoteTitle: "ملاحظة", footNoteDesc: "الأسعار تُعرض بعد التشخيص."
-  },
-  en: {
-    logo: "Afaq Company<br><small style='font-weight:normal;font-size:.75rem;color:#64748b'>Web Design</small>",
-    navAbout: "About Us", navServices: "Services", navTesti: "Reviews", navSelector: "Find Service", navContact: "Contact",
-    heroTitle: "Afaq Web Design Company",
-    heroDesc: "Web design, custom software development, maintenance, IT facility management, technical studies, and greeting cards — all in one place in Kuwait.",
-    heroBtn1: "Choose Your Service", heroBtn2: "Browse Services",
-    aboutTitle: "About Us",
-    aboutP1: "Afaq Web Design Company was founded with Kuwaiti management, comprising a team of systems analysts and programmers with extensive years of experience.",
-    aboutP2: "Our team possesses diverse expertise across various fields, and we always strive to provide our capabilities and energies for the benefit of our valued clients.",
-    servicesTitle: "Our Services", servicesSub: "Click on a service or use the advisor below to find the best fit.",
-    testiTitle: "Client Reviews", testiSub: "We are proud of our clients' trust. Here are some of their experiences with us.",
-    testiP1: "A wonderful experience with Afaq. The website was delivered on time with quality exceeding expectations. Thanks to the professional team.",
-    testiN1: "Abdullah Al-Salem", testiT1: "E-commerce Owner",
-    testiP2: "A highly professional team with great expertise. They helped me program a custom system for my office, saving me a lot of time and effort.",
-    testiN2: "Sara Al-Ali", testiT2: "Consultancy Manager",
-    testiP3: "Excellent customer service, and the website is fast and mobile-responsive. I recommend them to anyone looking for quality.",
-    testiN3: "Mohammed Al-Khaled", testiT3: "Startup Founder",
-    selTitle: "Choose the Right Service for You", selSub: "Answer 3 questions and we'll suggest the right service.",
-    lblClient: "You are?", lblNeed: "Your need?", lblBudget: "Budget?", selBtn: "Suggest a Service",
-    contactTitle: "Ready to start?", contactDesc: "Send us your requirements and we will reply with a preliminary offer.",
-    contactWa: "Contact via WhatsApp", contactInsta: "Follow on Instagram", contactEmail: "Send us an Email",
-    footTitle: "Afaq Company", footDesc: "Web design, custom software, maintenance, IT facility management, technical studies, and greeting cards.",
-    footContact: "Contact Us", footLoc: "Kuwait", footNoteTitle: "Note", footNoteDesc: "Prices are quoted after diagnosis."
-  }
-};
-const servicesData = [
-  {id:"website", title_ar:"تصميم مواقع إلكترونية", title_en:"Website Design", badge_ar:"الأكثر طلباً", badge_en:"Most Popular", desc_ar:"موقع سريع ومتجاوب يعرض خدماتك ويجلب لك عملاء.", desc_en:"Fast and responsive website showcasing your services.", features_ar:["تصميم متجاوب للجوال","صفحات تعريفية وخدمات","ربط واتساب ونموذج تواصل","تحسين أساسي لمحركات البحث"], features_en:["Responsive design","Info & service pages","WhatsApp integration","Basic SEO"]},
-  {id:"software", title_ar:"تصميم وبرمجة البرمجيات الخاصة", title_en:"Custom Software", badge_ar:"حل مخصص", badge_en:"Custom Solution", desc_ar:"أدوات وأنظمة صغيرة تحل مشكلة محددة في عملك.", desc_en:"Small tools and systems solving specific business problems.", features_ar:["تحليل الاحتياج","واجهة استخدام بسيطة","ربط قواعد بيانات","تسليم مع دليل استخدام"], features_en:["Requirement analysis","Simple UI","Database integration","User manual"]},
-  {id:"maintenance", title_ar:"صيانة البرمجيات والدعم الفني", title_en:"Maintenance & Support", badge_ar:"دعم", badge_en:"Support", desc_ar:"متابعة التحديثات والأعطال وتحسين أداء الأنظمة.", desc_en:"Monitoring updates, bugs, and optimizing performance.", features_ar:["فحص دوري","نسخ احتياطي","إصلاح أعطال","دعم عن بعد"], features_en:["Periodic checks","Backups","Bug fixing","Remote support"]},
-  {id:"research", title_ar:"بحوث ودراسات حاسوبية", title_en:"Computer Research", badge_ar:"قرار أفضل", badge_en:"Better Decision", desc_ar:"تشخيص تقني ودراسة جدوى قبل الاستثمار في نظام أو موقع.", desc_en:"Technical diagnosis and feasibility studies.", features_ar:["تقييم البنية الحالية","تحليل الاحتياج","توصيات عملية","تقرير واضح"], features_en:["Architecture review","Needs analysis","Recommendations","Clear report"]},
-  {id:"it", title_ar:"إدارة المرافق الحاسوبية", title_en:"IT Management", badge_ar:"اشتراك شهري", badge_en:"Monthly Plan", desc_ar:"إدارة الشبكة والأجهزة والنسخ الاحتياطي للمكاتب.", desc_en:"Managing network, devices, and backups for offices.", features_ar:["متابعة الشبكة","إدارة الأجهزة","نسخ احتياطي","دعم مستخدمين"], features_en:["Network monitoring","Device management","Backups","User support"]},
-  {id:"cards", title_ar:"بطاقات التهنئة", title_en:"Greeting Cards", badge_ar:"تصميم", badge_en:"Design", desc_ar:"بطاقات مناسبات رسمية وشخصية بجودة موحدة.", desc_en:"Official and personal occasion cards.", features_ar:["بطاقات عيد ووطنية","ترقيات وتخرج","تعديل سريع","باقة للشركات"], features_en:["Eid & National cards","Promotions & Graduation","Quick edits","Corporate packages"]},
-  {id:"care", title_ar:"باقة رعاية الموقع الشهرية", title_en:"Website Care Plan", badge_ar:"اشتراك", badge_en:"Subscription", desc_ar:"اطمئن على موقعك شهرياً دون متابعة تقنية.", desc_en:"Peace of mind for your website.", features_ar:["تحديثات أمنية","نسخ احتياطي","مراقبة الاستضافة","تعديلات بسيطة"], features_en:["Security updates","Backups","Hosting monitoring","Minor edits"]},
-  {id:"diagnostic", title_ar:"تشخيص تقني شامل", title_en:"Tech Diagnosis", badge_ar:"ابدأ هنا", badge_en:"Start Here", desc_ar:"لا تعرف من أين تبدأ؟ نجلس معك ونحدد الأولوية.", desc_en:"Don't know where to start? We help you.", features_ar:["جلسة تشخيص","تحديد المشكلة","خطة تنفيذ","عرض سعر واضح"], features_en:["Diagnosis session","Problem identification","Action plan","Clear quote"]}
-];
-function renderServices() {
-  const grid = document.getElementById("servicesGrid");
-  grid.innerHTML = "";
-  servicesData.forEach(s => {
-    const div = document.createElement("div");
-    div.className = "card";
-    const title = currentLang === 'ar' ? s.title_ar : s.title_en;
-    const badge = currentLang === 'ar' ? s.badge_ar : s.badge_en;
-    const desc = currentLang === 'ar' ? s.desc_ar : s.desc_en;
-    const features = currentLang === 'ar' ? s.features_ar : s.features_en;
-    const btnText = currentLang === 'ar' ? "اطلب عرض سعر" : "Request Quote";
-    div.innerHTML = `
-      <img class="card-img" src="${s.id}.jpg" alt="${title}" onerror="this.style.background='linear-gradient(135deg,#287AB4,#F5A623)';this.removeAttribute('src')">
-      <div class="card-body">
-        <span class="badge">${badge}</span>
-        <h3>${title}</h3>
-        <p>${desc}</p>
-        <ul>${features.map(f=>`<li>${f}</li>`).join("")}</ul>
-        <a class="btn btn-outline" href="#" onclick="contactService('${s.id}');return false;">${btnText}</a>
-      </div>`;
-    grid.appendChild(div);
-  });
-}
-function toggleLang() {
-  currentLang = currentLang === 'ar' ? 'en' : 'ar';
-  document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-  document.documentElement.lang = currentLang;
-  const t = translations[currentLang];
-  document.getElementById("logo-text").innerHTML = t.logo;
-  document.getElementById("nav-about").innerText = t.navAbout;
-  document.getElementById("nav-services").innerText = t.navServices;
-  document.getElementById("nav-testi").innerText = t.navTesti;
-  document.getElementById("nav-selector").innerText = t.navSelector;
-  document.getElementById("nav-contact").innerText = t.navContact;
-  document.getElementById("lang-btn").innerText = currentLang === 'ar' ? "English" : "عربي";
-  document.getElementById("hero-title").innerText = t.heroTitle;
-  document.getElementById("hero-desc").innerText = t.heroDesc;
-  document.getElementById("hero-btn1").innerText = t.heroBtn1;
-  document.getElementById("hero-btn2").innerText = t.heroBtn2;
-  document.getElementById("about-title").innerText = t.aboutTitle;
-  document.getElementById("about-p1").innerText = t.aboutP1;
-  document.getElementById("about-p2").innerText = t.aboutP2;
-  document.getElementById("services-title").innerText = t.servicesTitle;
-  document.getElementById("services-sub").innerText = t.servicesSub;
-  document.getElementById("testi-title").innerText = t.testiTitle;
-  document.getElementById("testi-sub").innerText = t.testiSub;
-  document.getElementById("testi-p1").innerText = t.testiP1;
-  document.getElementById("testi-n1").innerText = t.testiN1;
-  document.getElementById("testi-t1").innerText = t.testiT1;
-  document.getElementById("testi-p2").innerText = t.testiP2;
-  document.getElementById("testi-n2").innerText = t.testiN2;
-  document.getElementById("testi-t2").innerText = t.testiT2;
-  document.getElementById("testi-p3").innerText = t.testiP3;
-  document.getElementById("testi-n3").innerText = t.testiN3;
-  document.getElementById("testi-t3").innerText = t.testiT3;
-  document.getElementById("sel-title").innerText = t.selTitle;
-  document.getElementById("sel-sub").innerText = t.selSub;
-  document.getElementById("lbl-client").innerText = t.lblClient;
-  document.getElementById("lbl-need").innerText = t.lblNeed;
-  document.getElementById("lbl-budget").innerText = t.lblBudget;
-  document.getElementById("sel-btn").innerText = t.selBtn;
-  document.querySelectorAll('select option').forEach(opt => {
-    if(opt.dataset.ar && opt.dataset.en) opt.innerText = currentLang === 'ar' ? opt.dataset.ar : opt.dataset.en;
-  });
-  document.getElementById("contact-title").innerText = t.contactTitle;
-  document.getElementById("contact-desc").innerText = t.contactDesc;
-  document.getElementById("contact-insta").innerText = t.contactInsta;
-  document.getElementById("contact-email").innerText = t.contactEmail;
-  document.getElementById("waMain").innerText = t.contactWa;
-  document.getElementById("foot-title").innerText = t.footTitle;
-  document.getElementById("foot-desc").innerText = t.footDesc;
-  document.getElementById("foot-contact").innerText = t.footContact;
-  document.getElementById("foot-loc").innerText = t.footLoc;
-  document.getElementById("foot-note-title").innerText = t.footNoteTitle;
-  document.getElementById("foot-note-desc").innerText = t.footNoteDesc;
-  renderServices();
-}
-function waLink(text){return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`}
-function contactService(id){
-  const s = servicesData.find(x=>x.id===id);
-  const title = currentLang === 'ar' ? s.title_ar : s.title_en;
-  const msg = currentLang === 'ar' ? `مرحباً شركة آفاق، أرغب في خدمة: ${title}. أرجو إرسال عرض سعر.` : `Hello Afaq, I am interested in: ${title}. Please send a quote.`;
-  window.open(waLink(msg), "_blank");
-}
-function recommend(){
-  const clientSelect = document.getElementById("clientType");
-  const needSelect = document.getElementById("need");
-  const budgetSelect = document.getElementById("budget");
-  const clientText = clientSelect.options[clientSelect.selectedIndex].text;
-  const needValue = needSelect.value;
-  const needText = needSelect.options[needSelect.selectedIndex].text;
-  const budgetText = budgetSelect.options[budgetSelect.selectedIndex].text;
-  let id = "diagnostic";
-  if(needValue==="website") id = (budgetSelect.value==="monthly")?"care":"website";
-  else if(needValue==="software") id="software";
-  else if(needValue==="maintenance") id = (budgetSelect.value==="monthly")?"care":"maintenance";
-  else if(needValue==="it") id="it";
-  else if(needValue==="research") id="research";
-  else if(needValue==="cards") id="cards";
-  const s = servicesData.find(x=>x.id===id);
-  const title = currentLang === 'ar' ? s.title_ar : s.title_en;
-  const desc = currentLang === 'ar' ? s.desc_ar : s.desc_en;
-  const result = document.getElementById("result");
-  result.classList.add("show");
-  const resTitle = currentLang === 'ar' ? "الخدمة المقترحة" : "Suggested Service";
-  const resBtn = currentLang === 'ar' ? "تواصل بخصوص هذه الخدمة" : "Contact about this service";
-  const msg = currentLang === 'ar' 
-    ? `مرحباً شركة آفاق، أنا ${clientText}. احتياجي: ${needText}. الميزانية: ${budgetText}. الخدمة المقترحة: ${title}. أرجو التواصل.`
-    : `Hello Afaq, I am ${clientText}. My need: ${needText}. Budget: ${budgetText}. Suggested service: ${title}. Please contact me.`;
-  result.innerHTML = `<h3>${resTitle}: ${title}</h3><p>${desc}</p><a class="btn btn-wa" target="_blank" href="${waLink(msg)}">${resBtn}</a>`;
-  result.scrollIntoView({behavior:"smooth",block:"center"});
-}
-renderServices();
-document.getElementById("waMain").href = waLink(currentLang === 'ar' ? "مرحباً شركة آفاق، أرغب في الاستفسار عن خدماتكم." : "Hello Afaq, I would like to inquire about your services.");
-document.getElementById("waFooter").href = document.getElementById("waMain").href;
-</script>
+  <footer class="site-footer">
+    <div class="container">
+      © <span id="year"></span> حلول تقنية — جميع الحقوق محفوظة.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
